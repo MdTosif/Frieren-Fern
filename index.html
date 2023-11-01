@@ -13,32 +13,30 @@
             overflow-x: hidden;
         }
 
+        .img {
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 74vw;
+            width: 100vw;
+        }
+
         .img1 {
             background-image: url('1.jpg');
-            background-size: cover;
-            /* Optional: Adjust the size of the background image */
-            background-repeat: no-repeat;
-            height: 100vh;
-            width: 100vw;
+            
         }
 
         .img2 {
             background-image: url('2.jpg');
-            background-size: cover;
-            /* Optional: Adjust the size of the background image */
-            background-repeat: no-repeat;
-            height: 100vh;
-            width: 100vw;
         }
     </style>
 </head>
 
 <body>
     <div class="box">
-        <div class="img1"></div>
-        <div class="img2"></div>
-        <div class="img2"></div>
-        <div class="img2"></div>
+        <div class="img img1"></div>
+        <div class="img img2"></div>
+        <div class="img img2"></div>
+        <div class="img img2"></div>
     </div>
     <script>
         document.addEventListener("scroll", (e) => {
@@ -57,7 +55,7 @@
 
             if (pageHeight - (scrollPosition + windowHeight) < proximityToBottom) {
                 // The user is close to the bottom, perform your action here
-                document.querySelector('.box').innerHTML += `<div class="img2"></div>`;
+                document.querySelector('.box').innerHTML += `<div class="img img2"></div>`;
 
             }
         })
