@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            width: fit-content;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .img1 {
+            background-image: url('1.jpg');
+            background-size: cover;
+            /* Optional: Adjust the size of the background image */
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .img2 {
+            background-image: url('2.jpg');
+            background-size: cover;
+            /* Optional: Adjust the size of the background image */
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img1"></div>
+        <div class="img2"></div>
+        <div class="img2"></div>
+        <div class="img2"></div>
+    </div>
+    <script>
+        document.addEventListener("scroll", (e) => {
+            console.log(e);
+            // Calculate the current scroll position
+            var scrollPosition = window.scrollY;
+
+            // Calculate the height of the entire page, including content that is not visible
+            var pageHeight = document.documentElement.scrollHeight;
+
+            // Calculate the height of the visible portion of the page
+            var windowHeight = window.innerHeight;
+
+            // Calculate how close the user is to the bottom of the page (adjust the value as needed)
+            var proximityToBottom = 100; // Number of pixels from the bottom
+
+            if (pageHeight - (scrollPosition + windowHeight) < proximityToBottom) {
+                // The user is close to the bottom, perform your action here
+                document.querySelector('.box').innerHTML += `<div class="img2"></div>`;
+
+            }
+        })
+    </script>
+</body>
+
+</html>
